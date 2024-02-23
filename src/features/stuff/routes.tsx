@@ -14,7 +14,8 @@ export const routes: Route[] = [
   {
     id: 'stuff-page-seccond',
     name: 'Stuff Page Seccond',
-    index: true,
+    path: ':id',
+    hide: true,
     element: <LazyStuffPageSeccond />,
   },
 ]

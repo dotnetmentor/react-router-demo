@@ -4,11 +4,12 @@ import { Route } from './Route'
 
 const LazyStart = lazy(() => import('../features/start'))
 const LazyStuff = lazy(() => import('../features/stuff'))
+const LazyFoo = lazy(() => import('../features/foo'))
 
 export const routes: Route[] = [
   {
     path: '/',
-    name: 'Start',
+    name: 'Home',
     element: <LazyStart />,
   },
   {
@@ -16,5 +17,16 @@ export const routes: Route[] = [
     path: 'stuff',
     element: <LazyStuff />,
     children: [...stuffRoutes],
+  },
+  {
+    name: 'Foo',
+    path: 'foo',
+    element: <LazyFoo />,
+  },
+  {
+    path: '*',
+    element: <div>404</div>,
+    name: '404',
+    hide: true,
   },
 ]
