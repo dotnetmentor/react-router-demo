@@ -14,9 +14,9 @@ const Root: React.FC = () => {
             <Typography>DEMO PAGE</Typography>
             <Stack direction='row'>
               {...routes
-                .filter((x) => !x.hide)
+                .filter((x) => !x.hide && !!x.path)
                 .map((route) => (
-                  <Button component={Link} to={route.path}>
+                  <Button component={Link} to={route.path!}>
                     {route.name}
                   </Button>
                 ))}
